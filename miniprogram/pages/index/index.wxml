@@ -1,2 +1,41 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="first_home">
+  <!-- 搜索框 开始 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框 结束 -->
+  <!-- 轮播图 开始 -->
+  <view class="first_swiper">
+    <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <navigator url="{{item.navigator_url}}">
+          <image mode="widthFix" src="{{item.image_src}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图 结束 -->
+  <!-- 导航 开始 -->
+  <view class="first_cate">
+    <!-- 因为导航后台接口数据，不正确，所以写死跳转分类页面 -->
+    <navigator url="/pages/category/index" open-type="switchTab" wx:for="{{cateList}}" wx:key="*this">
+      <image mode="widthFix" src="{{item.image_src}}"></image>
+    </navigator>
+  </view>
+  <!-- 导航 结束 -->
+  <!-- 主题版面 开始 -->
+  <view class="first_floor">
+    <!-- 主题分类 -->
+    <view class="theme_floor" wx:for="{{themeList}}" wx:for-item="item" wx:for-index="index" wx:key="*this">
+      <!-- 主题标题 -->
+      <view class="theme_title">
+        <image mode="widthFix" src="{{item.floor_title.image_src}}"></image>
+      </view>
+      <!-- 主题 hot推荐 -->
+      <view class="theme_ref">
+        <navigator url="{{'/'+item1.navigator_url}}" wx:for="{{item.product_list}}" wx:for-item="item1" wx:for-index="index1" wx:key="*this" class="theme_ref_first">
+          <image mode="{{index1===0 ? 'widthFix': 'scaleToFill'}}" src="{{item1.image_src}}" />
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 主题版面 结束 -->
+</view>
