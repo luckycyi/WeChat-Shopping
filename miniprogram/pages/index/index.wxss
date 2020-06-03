@@ -1,1 +1,42 @@
-/* pages/index/index.wxss */
+.first_swiper swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.first_swiper swiper image {
+  width: 100%;
+}
+.first_cate {
+  display: flex;
+}
+.first_cate navigator {
+  padding: 20rpx;
+  flex: 1;
+}
+.first_cate navigator image {
+  width: 100%;
+}
+.first_floor .theme_floor .theme_title {
+  padding: 10rpx 0;
+}
+.first_floor .theme_floor .theme_title image {
+  width: 100%;
+}
+.first_floor .theme_floor .theme_ref {
+  overflow: hidden;
+}
+.first_floor .theme_floor .theme_ref .theme_ref_first {
+  float: left;
+  width: 33.3%;
+}
+.first_floor .theme_floor .theme_ref .theme_ref_first:nth-last-child(-n + 4) {
+  height: 27.70215517vw;
+  border-left: 10rpx solid #fff;
+}
+.first_floor .theme_floor .theme_ref .theme_ref_first:nth-of-type(2),
+.first_floor .theme_floor .theme_ref .theme_ref_first:nth-of-type(3) {
+  border-bottom: 10rpx solid #fff;
+}
+.first_floor .theme_floor .theme_ref .theme_ref_first image {
+  width: 100%;
+  height: 100%;
+}
