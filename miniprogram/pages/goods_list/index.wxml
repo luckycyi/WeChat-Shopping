@@ -5,7 +5,29 @@
 <!-- 标签页 组件 -->
 <Tabs tabs="{{tabs}}" binditemIndex="changeIndexItem">
   <block wx:if="{{tabs[0].isActive}}">
-    1
+    <view class="first_tabs">
+      <navigator class="first_tabs_item"
+      wx:for="{{goodsList}}"
+      wx:key="goods_id"
+      url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+      >
+        <!-- 左侧图片 -->
+        <view class="first_img_item">
+          <image src="{{item.goods_small_logo?item.goods_small_logo:'http://ku.90sjimg.com/element_origin_min_pic/01/47/26/835743e2ba5da85.jpg'}}" mode="widthFix" lazy-load></image>
+        </view>
+        <!-- 左侧图片 -->
+        <!-- 右侧 详情介绍 -->
+      <view class="first_info_item">
+        <view class="goods_name">
+          {{item.goods_name}}
+        </view>
+        <view class="goods_price">
+          {{item.goods_price}}
+        </view>
+      </view>
+        <!-- 右侧 详情介绍 -->
+      </navigator>
+    </view>
   </block>
   <block wx:if="{{tabs[1].isActive}}">
     2
