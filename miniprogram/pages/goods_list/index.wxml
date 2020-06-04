@@ -1,2 +1,19 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<view class="goods_list">
+  <!-- 搜索框 开始 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索框 结束 -->
+<!-- 标签页 组件 -->
+<Tabs tabs="{{tabs}}" binditemIndex="changeIndexItem">
+  <block wx:if="{{tabs[0].isActive}}">
+    1
+  </block>
+  <block wx:if="{{tabs[1].isActive}}">
+    2
+  </block>
+  <block wx:if="{{tabs[2].isActive}}">
+    3
+  </block>
+</Tabs>
+<!-- 标签页 组件 -->
+
+</view>

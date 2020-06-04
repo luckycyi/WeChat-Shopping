@@ -1,2 +1,55 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="cates">
+	<!-- 搜索框 开始 -->
+	<SearchInput/>
+	<!-- 搜索框 结束 -->
+	<!-- 菜单栏 开始 -->
+	<!-- 左侧菜单栏 -->
+	<view class="cates_container">
+		<scroll-view scroll-y class="left_menu">
+      <view 
+      class="menu_item {{index === currentIndex ? 'active' : '' }}" 
+      wx:for="{{catesLeftList}}" 
+      wx:key="*this"
+      data-index="{{index}}"
+      bindtap="handleTap"
+      >
+				{{item}}
+			</view>
+		</scroll-view>
+		<!-- 左侧菜单栏 -->
+		<!-- 右侧商品栏 -->
+		<scroll-view scroll-top="{{scrollTop}}" scroll-y class="right_menu">
+      <view 
+      class="goods_menu"
+			wx:for="{{catesRightList}}"
+			wx:for-index="index"
+			wx:for-item="item"
+			wx:key="cat_id"
+			>
+				<!-- 商品类别 -->
+				<view class="goods_title">
+					<text class="changeColor">/</text>
+					<text>{{item.cat_name}}</text>
+					<text class="changeColor">/</text>
+				</view>
+				<!-- 商品 -->
+				<view class="goods_list">
+					<navigator
+					class="goods_list_num"
+					wx:for="{{item.children}}"
+					wx:key="cat_id"
+					wx:for-item="item1"
+					wx:for-index="index1"
+					url="/pages/goods_list/index?cid={{item1.cat_id}}"
+					>
+						<image mode="widthFix" src="{{item1.cat_icon}}" />
+						<view class="goods_list_name">{{item1.cat_name}}</view>
+					</navigator>
+				</view>
+			</view>
+		</scroll-view>
+		<!-- 右侧商品栏 -->
+	</view>
+	<!-- 菜单栏 结束 -->
+</view>
+

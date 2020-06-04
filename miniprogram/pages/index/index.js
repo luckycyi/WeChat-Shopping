@@ -36,7 +36,6 @@ Page({
   },
   // 获取导航模块数据
   getCateList() {
-    22
     request({ url: '/home/catitems' }).then((result) => {
       this.setData({
         cateList: result,
