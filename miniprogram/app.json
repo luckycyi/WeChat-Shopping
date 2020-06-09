@@ -11,7 +11,8 @@
     "pages/user/index",
     "pages/feedback/index",
     "pages/login/index",
-    "pages/auth/index"
+    "pages/auth/index",
+    "pages/pay/index"
   ],
   "tabBar": {
     "color": "#999",
@@ -39,7 +40,7 @@
         "selectedIconPath": "icons/cart-o.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/user/index",
         "text": "我的",
         "iconPath": "icons/my.png",
         "selectedIconPath": "icons/my-o.png"
@@ -50,7 +51,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eb4450",
-    "navigationBarTitleText": "微购",
+    "navigationBarTitleText": "微购商城",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json"

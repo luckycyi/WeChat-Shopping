@@ -1,0 +1,116 @@
+page {
+  background-color: #edece8;
+}
+.user_info {
+  height: 45vh;
+  background-color: var(--themeColor);
+  overflow: hidden;
+  position: relative;
+  .uers_info_img {
+    position: relative;
+    .user_img {
+      height: 50vh;
+      width: 100%;
+      // 高斯模糊
+      filter: blur(10rpx);
+    }
+    .user_info_small {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20%;
+      text-align: center;
+      .user_icon {
+        width: 150rpx;
+        height: 150rpx;
+        border-radius: 50%;
+      }
+      .user_name {
+        color: #fff;
+        margin-top: 15rpx;
+      }
+    }
+  }
+  .user_btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    border: 1rpx solid greenyellow;
+    color: greenyellow;
+    font-size: 38rpx;
+    border-radius: 10rpx;
+    navigator {
+      padding: 30rpx;
+    }
+  }
+}
+.user_content {
+  position: relative;
+  .user_main {
+    padding-bottom: 100rpx;
+    color: #666;
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40rpx;
+    .history_warp {
+      display: flex;
+      background-color: #fff;
+      navigator {
+        flex: 1;
+        padding: 10rpx 0;
+        text-align: center;
+        .history_num {
+          color: var(--themeColor);
+        }
+      }
+    }
+    // 我的订单
+    .oder_warp {
+      color: #666;
+      background-color: #fff;
+      margin-top: 30rpx;
+      .order_title {
+        padding: 20rpx;
+        border-bottom: 1rpx solid #ccc;
+      }
+      .order_content {
+        display: flex;
+        text-align: center;
+        navigator {
+          flex: 1;
+          padding: 15rpx 0;
+          .iconfont {
+            color: var(--themeColor);
+            font-size: 40rpx;
+            padding-bottom: 10rpx;
+          }
+        }
+      }
+    }
+    .address_wrap {
+      margin-top: 30rpx;
+      padding: 20rpx;
+      background-color: #fff;
+    }
+    .app_info_wrap {
+      margin-top: 30rpx;
+      background-color: #fff;
+      color: #666;
+      font-size: 28rpx;
+      .app_info_item {
+        padding: 20rpx;
+        border-bottom: 1rpx solid #ccc;
+        &:first-child {
+          display: flex;
+          justify-content: space-between;
+        }
+        &:last-child {
+          border-bottom: 1rpx solid #fff;
+        }
+      }
+    }
+  }
+}

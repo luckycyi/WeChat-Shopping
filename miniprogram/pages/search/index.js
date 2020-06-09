@@ -1,66 +1,52 @@
-// pages/search/index.js
+import { request } from '../../request/index'
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    inputValue: '',
+    isFocus: true,
+    goods: [],
   },
-
+  // 防抖功能
+  TimeId: -1,
+  // 输入框的内容
+  handleInput(e) {
+    // 获取value内容 检测合理性
+    const { value } = e.detail
+    if (!value.trim()) {
+      this.setData({
+        goods: [],
+        isFocus: true,
+      })
+      return
+    }
+    // 发送获取数据
+    this.setData({
+      isFocus: false,
+    })
+    clearTimeout(this.TimeId)
+    this.TimeId = setTimeout(() => {
+      this.getGoodsList(value)
+    }, 1000)
+  },
+  // 发送获取数据
+  async getGoodsList(query) {
+    const res = await request({ url: '/goods/qsearch', data: { query } })
+    this.setData({
+      goods: res,
+    })
+  },
+  // 点击取消事件
+  handleCancel() {
+    this.setData({
+      inputValue: '',
+      isFocus: true,
+      goods: [],
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  onLoad: function (options) {},
 })

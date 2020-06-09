@@ -1,2 +1,44 @@
-<!--pages/collect/index.wxml-->
-<text>pages/collect/index.wxml</text>
+<Tabs tabs="{{tabs}}" binditemIndex="handleItemIndex">
+  <view class="collect_main">
+    <view class="collect_title">
+      <text class="collect_item active">全部</text>
+      <text class="collect_item">正在热卖</text>
+      <text class="collect_item">即将上线</text>
+    </view>
+    <!-- 列表 -->
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first_tabs">
+      <navigator class="first_tabs_item"
+      wx:for="{{collect}}"
+      wx:key="goods_id"
+      url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+      >
+        <!-- 左侧图片 -->
+        <view class="first_img_item">
+          <image src="{{item.goods_small_logo?item.goods_small_logo:'http://ku.90sjimg.com/element_origin_min_pic/01/47/26/835743e2ba5da85.jpg'}}" mode="widthFix" lazy-load></image>
+        </view>
+        <!-- 左侧图片 -->
+        <!-- 右侧 详情介绍 -->
+      <view class="first_info_item">
+        <view class="goods_name">
+          {{item.goods_name}}
+        </view>
+        <view class="goods_price">
+          {{item.goods_price}}
+        </view>
+      </view>
+        <!-- 右侧 详情介绍 -->
+      </navigator>
+    </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">
+      <image class="collect_img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591645370725&di=ad0010e3cb2369a0980754c19be64015&imgtype=0&src=http%3A%2F%2Fp1.qhimgs4.com%2Ft016371e367c4e2a7cb.jpg" mode="widthFix"></image>
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}">
+      <image class="collect_img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591645370725&di=ad0010e3cb2369a0980754c19be64015&imgtype=0&src=http%3A%2F%2Fp1.qhimgs4.com%2Ft016371e367c4e2a7cb.jpg" mode="widthFix"></image>
+    </block>
+    <block wx:elif="{{tabs[3].isActive}}">
+      <image class="collect_img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591645370725&di=ad0010e3cb2369a0980754c19be64015&imgtype=0&src=http%3A%2F%2Fp1.qhimgs4.com%2Ft016371e367c4e2a7cb.jpg" mode="widthFix"></image>
+    </block>
+  </view>
+</Tabs>

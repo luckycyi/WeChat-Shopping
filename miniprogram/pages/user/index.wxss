@@ -1,1 +1,114 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user_info {
+  height: 45vh;
+  background-color: var(--themeColor);
+  overflow: hidden;
+  position: relative;
+}
+.user_info .uers_info_img {
+  position: relative;
+}
+.user_info .uers_info_img .user_img {
+  height: 50vh;
+  width: 100%;
+  filter: blur(10rpx);
+}
+.user_info .uers_info_img .user_info_small {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  text-align: center;
+}
+.user_info .uers_info_img .user_info_small .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info .uers_info_img .user_info_small .user_name {
+  color: #fff;
+  margin-top: 15rpx;
+}
+.user_info .user_btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  border: 1rpx solid greenyellow;
+  color: greenyellow;
+  font-size: 38rpx;
+  border-radius: 10rpx;
+}
+.user_info .user_btn navigator {
+  padding: 30rpx;
+}
+.user_content {
+  position: relative;
+}
+.user_content .user_main {
+  padding-bottom: 100rpx;
+  color: #666;
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+}
+.user_content .user_main .history_warp {
+  display: flex;
+  background-color: #fff;
+}
+.user_content .user_main .history_warp navigator {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: center;
+}
+.user_content .user_main .history_warp navigator .history_num {
+  color: var(--themeColor);
+}
+.user_content .user_main .oder_warp {
+  color: #666;
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.user_content .user_main .oder_warp .order_title {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .oder_warp .order_content {
+  display: flex;
+  text-align: center;
+}
+.user_content .user_main .oder_warp .order_content navigator {
+  flex: 1;
+  padding: 15rpx 0;
+}
+.user_content .user_main .oder_warp .order_content navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 40rpx;
+  padding-bottom: 10rpx;
+}
+.user_content .user_main .address_wrap {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.user_content .user_main .app_info_wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+  color: #666;
+  font-size: 28rpx;
+}
+.user_content .user_main .app_info_wrap .app_info_item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user_content .user_main .app_info_wrap .app_info_item:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+.user_content .user_main .app_info_wrap .app_info_item:last-child {
+  border-bottom: 1rpx solid #fff;
+}
