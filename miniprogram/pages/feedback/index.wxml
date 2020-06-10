@@ -1,2 +1,42 @@
-<!--pages/feedback/index.wxml-->
-<text>pages/feedback/index.wxml</text>
+<Tabs tabs="{{tabs}}" binditemIndex="handleTabsItemChange">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="feedback_container">
+    <view class="feedback_title">问题的种类</view>
+    <!-- 问题种类 -->
+    <view class="feedback_class">
+      <text wx:for="{{texts}}" wx:key="*this" data-index="{{index}}" bindtap="handleTriget" class="{{item.isActive===true?'active':''}}">{{item.value}}</text>
+    </view>
+    <!-- 问题种类 -->
+    <view class="feedback_content">
+      <!-- 问题描述 -->
+      <textarea value="{{valueInput}}" placeholder="请描述一下您的问题" bindinput="handleTextInput"></textarea>
+      <!-- 问题描述 -->
+        <!-- 添加图片 -->
+        <view class="add_img">
+          <!-- 添加按钮 -->
+          <button class="add_title" bindtap="handleAddImg">+</button>
+          <!-- 添加按钮 -->
+          <!-- 图片栏 -->
+          <view class="img_item" wx:for="{{chooseItem}}" wx:key="*this">
+            <UpImg src="{{item}}" num="{{index}}" bindupImgTab="handleChange"></UpImg>
+          </view>
+          <!-- 图片栏 -->
+        </view>
+    </view>
+    <!-- 提交 -->
+    <view class="push_submit">
+      <button type="warn" bindtap="handleFormSubmit">
+        <icon class="" type="success_no_circle" size="23" color="white"></icon>
+      提交
+      </button>
+    </view>
+    <!-- 提交 -->
+  </view>
+  </block>
+  <block wx:else="{{tabs[1].isActive}}">
+    <view class="fb_shop">
+      <image src="http://img3.imgtn.bdimg.com/it/u=249152271,3939546414&fm=26&gp=0.jpg" mode="center">
+    </image>
+    </view>
+  </block>
+</Tabs>

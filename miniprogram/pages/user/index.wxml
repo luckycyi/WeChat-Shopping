@@ -70,10 +70,9 @@
     </view>
     <!-- 联系客服 -->
     <!-- 意见反馈 -->
-    <!-- <navigator class="app_info_item" url="/pages/feedback/index">意见反馈</navigator> -->
-  <button class="default" type="primay" open-type="feedback" >
-    意见反馈
-  </button>
+    <navigator class="app_info_item" url="/pages/feedback/index">意见反馈</navigator>
+    <!-- 直接调用小程序自带的反馈接口 -->
+  <!-- <button class="default" type="primay" open-type="feedback" >意见反馈</button> -->
   <!-- 意见反馈 -->
     <!-- 关于我们 -->
     <view class="app_info_item">关于我们</view>

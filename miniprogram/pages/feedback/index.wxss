@@ -1,1 +1,81 @@
-/* pages/feedback/index.wxss */
+page {
+  background-color: #eee;
+}
+.feedback_container {
+  padding: 30rpx;
+  color: #666;
+}
+.feedback_container .feedback_title {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+.feedback_container .feedback_class {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.feedback_container .feedback_class text {
+  width: 30%;
+  background-color: #fff;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.feedback_container .feedback_class .active {
+  background-color: var(--themeColor);
+  color: #fff;
+}
+.feedback_container .feedback_content {
+  margin-top: 30rpx;
+}
+.feedback_container .feedback_content textarea {
+  width: 100%;
+  height: 35vh;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+.feedback_container .feedback_content .add_img {
+  display: flex;
+  background-color: #fff;
+  padding-bottom: 30rpx;
+}
+.feedback_container .feedback_content .add_img .add_title {
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 60rpx;
+  color: #ccc;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  padding: 0;
+  margin: 0;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.feedback_container .feedback_content .add_img .img_item {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.feedback_container .push_submit {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.feedback_container .push_submit button {
+  width: 30%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fb_shop {
+  width: 100vw;
+}
+.fb_shop image {
+  width: 100%;
+}
